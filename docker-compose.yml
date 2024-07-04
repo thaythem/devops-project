@@ -4,7 +4,7 @@ services:
   app:
     image: haythemtm/eventsproject:${BUILD_NUMBER}
     ports:
-      - "8089:8080"
+      - "8089:8089"
     environment:
       SPRING_PROFILES_ACTIVE: prod
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/eventsProject?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
