@@ -82,4 +82,8 @@ pipeline {
             cleanWs()
         }
     }
+    tools {
+        // Use Maven with the configured settings.xml
+        maven 'Maven'
+    }    
 }
