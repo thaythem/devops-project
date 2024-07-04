@@ -27,11 +27,6 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage('check pwd'){
-            steps{
-                sh 'tree .'
-            }
-        }
         stage('SonarQube Analysis') {
             steps {
                 script {
@@ -41,7 +36,11 @@ pipeline {
                 }
             }
         }
-
+        stage('check pwd'){
+            steps{
+                sh 'tree .'
+            }
+        }
         stage('Upload to Nexus') {
             steps {
                 nexusArtifactUploader(
@@ -53,7 +52,7 @@ pipeline {
                     repository: 'maven-releases',
                     credentialsId: "$NEXUS_CREDENTIALS",
                     artifacts: [
-                        [artifactId: 'eventsProject', classifier: '', file: 'target/eventsProject-1.0.0-SNAPSHOT.jar', type: 'jar']
+                        [artifactId: 'eventsProject', classifier: '', file: 'target/eventsProject-1.0.0.jar', type: 'jar']
                     ]
                 )
             }
