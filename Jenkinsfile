@@ -16,7 +16,13 @@ pipeline {
                 git 'https://github.com/thaythem/devops-project.git'
             }
         }
-        
+
+        stage('Compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+                
         stage('SonarQube Analysis') {
             steps {
                 script {
