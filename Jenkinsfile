@@ -53,7 +53,7 @@ pipeline {
                     repository: 'maven-releases',
                     credentialsId: "$NEXUS_CREDENTIALS",
                     artifacts: [
-                        [artifactId: 'eventsProject', classifier: '', file: 'target/eventsProject-1.0.0.jar', type: 'jar']
+                        [artifactId: 'eventsProject', classifier: '', file: 'target/eventsProject-1.0.0-SNAPSHOT.jar', type: 'jar']
                     ]
                 )
             }
