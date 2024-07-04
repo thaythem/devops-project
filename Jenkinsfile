@@ -63,6 +63,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker build -t haythemtm/eventsproject:${BUILD_NUMBER} .'
+                    sh 'docker logout'
                     sh 'docker login -u haythemtm -p haythem123'
                     sh 'docker push haythemtm/eventsproject:${BUILD_NUMBER}'
                 }
