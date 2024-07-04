@@ -62,9 +62,9 @@ pipeline {
         stage('Docker Build and Push') {
             steps {
                 script {
-                    sh 'docker build -t timou123/eventsproject:${BUILD_NUMBER} .'
+                    sh 'docker build -t haythemtm/eventsproject:${BUILD_NUMBER} .'
                     sh 'docker login -u haythemtm -p haythem123'
-                    sh 'docker push timou123/eventsproject:${BUILD_NUMBER}'
+                    sh 'docker push haythemtm/eventsproject:${BUILD_NUMBER}'
                 }
             }
         }
