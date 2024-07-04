@@ -22,7 +22,11 @@ pipeline {
                 sh 'mvn compile'
             }
         }
-                
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
         stage('SonarQube Analysis') {
             steps {
                 script {
@@ -30,12 +34,6 @@ pipeline {
                         sh 'mvn sonar:sonar -Dsonar.projectKey=your-project-key -Dsonar.host.url=$SONARQUBE_URL -Dsonar.login=admin -Dsonar.password=haythem'
                     }
                 }
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'mvn clean package'
             }
         }
 
