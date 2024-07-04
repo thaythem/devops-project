@@ -27,6 +27,11 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        stage('check pwd'){
+            steps{
+                sh 'tree .'
+            }
+        }
         stage('SonarQube Analysis') {
             steps {
                 script {
