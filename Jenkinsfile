@@ -4,7 +4,7 @@ pipeline {
     environment {
         SONARQUBE_URL = 'http://localhost:9001'
         SONARQUBE_CREDENTIALS = 'sonartok' // Set this in Jenkins credentials
-        NEXUS_URL = 'http://localhost:8085'
+        NEXUS_URL = 'localhost:8085'
         NEXUS_CREDENTIALS = 'nexus-credentials-id' // Set this in Jenkins credentials
         DOCKER_IMAGE = 'your-docker-image-name'
         DOCKER_REGISTRY = 'your-docker-registry'
