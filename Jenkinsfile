@@ -62,7 +62,9 @@ pipeline {
         stage('Docker Build and Push') {
             steps {
                 script {
-                    docker.build("$DOCKER_IMAGE:$BUILD_NUMBER").push()
+                    sh 'docker build -t timou123/eventsProject:${BUILD_NUMBER} .'
+                    sh 'docker login -u haythemtm -p haythem123'
+                    sh 'docker push timou123/eventsProject:${BUILD_NUMBER}'
                 }
             }
         }
