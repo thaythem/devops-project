@@ -50,7 +50,7 @@ pipeline {
                     nexusUrl: "$NEXUS_URL",
                     groupId: 'com.example',
                     version: '1.0.0-SNAPSHOT',
-                    repository: 'maven-releases',
+                    repository: 'maven-snapshots', // Use maven-snapshots for SNAPSHOT versions
                     credentialsId: "$NEXUS_CREDENTIALS",
                     artifacts: [
                         [artifactId: 'eventsProject', classifier: '', file: 'target/eventsProject-1.0.0-SNAPSHOT.jar', type: 'jar']
