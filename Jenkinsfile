@@ -75,6 +75,7 @@ pipeline {
                 script {
                     sh 'docker compose down'
                     sh 'docker compose up -d'
+                    sh 'cat docker-compose.yml'
                 }
             }
         }
